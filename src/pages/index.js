@@ -15,26 +15,10 @@ function App() {
     <div>
       <div className="ml-3 mr-3">
         <Tabs>
-          <Tab
-            onClick={handleTabs}
-            active={active === 0}
-            id={0}
-            style={{
-              borderTopLeftRadius: "4px",
-              borderBottomLeftRadius: "4px",
-              border: "1px solid rgb(66,71,73,0.3)",
-            }}>
+          <Tab onClick={handleTabs} active={active === 0} id={0}>
             Lunch
           </Tab>
-          <Tab
-            onClick={handleTabs}
-            active={active === 1}
-            id={1}
-            style={{
-              borderTopRightRadius: "4px",
-              borderBottomRightRadius: "4px",
-              border: "1px solid rgb(66,71,73,0.1)",
-            }}>
+          <Tab onClick={handleTabs} active={active === 1} id={1}>
             Dinner
           </Tab>
         </Tabs>
