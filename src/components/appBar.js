@@ -8,15 +8,19 @@ import IconButton from "@material-ui/core/IconButton";
 function appbar() {
   return (
     <div>
-      <AppBar>
-        <ToolBar>
-          <IconButton edge="start" color="inherit">
+      <AppBar elevation={0}>
+        <ToolBar className="bg-cultured">
+          <IconButton edge="start" className="color-charcoal">
             <ArrowBackIcon />
           </IconButton>
-          <Typography variant="h6">Alamat Pengataran</Typography>
+          <Typography className="color-charcoal">
+            <small>Alamat Pengataran</small>
+          </Typography>
         </ToolBar>
-        <ToolBar>
-          <Typography variant="h6">Calendar slider</Typography>
+        <ToolBar className="bg-cultured">
+          <Typography variant="h6" className="color-charcoal">
+            Calendar slider
+          </Typography>
         </ToolBar>
       </AppBar>
       <ToolBar />
