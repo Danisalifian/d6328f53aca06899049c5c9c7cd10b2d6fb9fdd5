@@ -7,6 +7,5 @@ export const TopBar = styled.div`
   height: 40px;
   background-color: #f1f1f2;
   width: 100%;
-  margin-top: -48px;
   z-index: 10;
 `;

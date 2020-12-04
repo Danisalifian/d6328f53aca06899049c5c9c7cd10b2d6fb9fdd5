@@ -50,7 +50,7 @@ function AppBars() {
             </div>
           </div>
         </ToolBar>
-        <ToolBar className="bg-cultured">
+        <ToolBar className="bg-cultured is-border-bottom">
           <Typography variant="h6" className="color-charcoal">
             Calendar slider
           </Typography>

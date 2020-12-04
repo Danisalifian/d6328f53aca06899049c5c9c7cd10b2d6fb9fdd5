@@ -7,6 +7,7 @@ import Slide from "@material-ui/core/Slide";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../store/actions/productActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Toolbar from "@material-ui/core/Toolbar";
 
 function App() {
   const dispatch = useDispatch();
@@ -56,7 +57,11 @@ function App() {
             </Tabs>
           </TopBar>
         </Slide>
-        <div className="container" style={{ marginTop: "48px" }}>
+        <Toolbar />
+        <div className="container">
+          <h1 className="text-xl font-bold color-charcoal px-3 mt-1">
+            Kamis. 13 Maret 2019
+          </h1>
           <Content active={active === 0}>
             <div>{listingProduct}</div>
           </Content>
