@@ -1,10 +1,11 @@
 import styled from "styled-components";
 export const Tabs = styled.ul`
   overflow: hidden;
-  // border-radius: 4px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   text-align: center;
+  width: 100%;
 `;
 
 export const Tab = styled.li`
