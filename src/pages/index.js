@@ -47,7 +47,7 @@ function App() {
       <div>
         <Slide appear={false} direction="down" in={!trigger}>
           <TopBar className="px-3">
-            <Tabs>
+            <Tabs className="mt-2">
               <Tab onClick={handleTabs} active={active === 0} id={0}>
                 Lunch
               </Tab>

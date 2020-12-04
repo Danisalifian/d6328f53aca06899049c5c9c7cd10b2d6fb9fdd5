@@ -4,8 +4,8 @@ export const TopBar = styled.div`
   display: flex;
   position: fixed;
   align-items: center;
-  height: 40px;
-  background-color: #f1f1f2;
+  height: 48px;
+  background-color: #fff;
   width: 100%;
   z-index: 10;
 `;
