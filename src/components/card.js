@@ -6,8 +6,9 @@ import ReactStars from "react-rating-stars-component";
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import StarBorderRoundedIcon from "@material-ui/icons/StarBorderRounded";
 import StarHalfRoundedIcon from "@material-ui/icons/StarHalfRounded";
+import { Button } from "./shared/button";
 
-const firstExample = {
+const starRates = {
   value: 4.5,
   edit: false,
   activeColor: "#a23530",
@@ -20,16 +21,6 @@ const firstExample = {
 const ActionGroup = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-`;
-
-const Button = styled.div`
-  padding: 4px 24px;
-  background-color: #f9423a;
-  color: #f1f1f2;
-  border-radius: 4px;
-  font-weight: 600;
-  display: flex;
   align-items: center;
 `;
 
@@ -46,7 +37,7 @@ function card() {
           <div className="font-semibold text-md color-sonic-silver is-flex is-item-center">
             4.5{" "}
             <span>
-              <ReactStars {...firstExample} classNames="mt-1 ml-1" />
+              <ReactStars {...starRates} classNames="mt-1 ml-1" />
             </span>
           </div>
           <p className="font-semibold color-charcoal text-lg mt-2">

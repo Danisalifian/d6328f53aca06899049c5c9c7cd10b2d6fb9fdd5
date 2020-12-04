@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <div className="ml-3 mr-3">
+      <div className="ml-3 mr-3 mt-2">
         <Tabs>
           <Tab onClick={handleTabs} active={active === 0} id={0}>
             Lunch
