@@ -10,3 +10,10 @@ export const fetchProduct = () => async (dispatch) => {
     payload: products,
   });
 };
+
+export const addToCart = (Item) => (dispatch) => {
+  dispatch({
+    type: types.ADD_TO_CART,
+    payload: Item,
+  });
+};

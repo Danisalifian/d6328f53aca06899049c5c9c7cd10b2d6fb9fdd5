@@ -7,6 +7,8 @@ import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import StarBorderRoundedIcon from "@material-ui/icons/StarBorderRounded";
 import StarHalfRoundedIcon from "@material-ui/icons/StarHalfRounded";
 import { Button } from "./shared/button";
+import { addToCart } from "../store/actions/productActions";
+import { useDispatch } from "react-redux";
 
 const starRates = {
   value: 4.5,
@@ -25,6 +27,16 @@ const ActionGroup = styled.div`
 `;
 
 function Card(props) {
+  const dispatch = useDispatch();
+
+  const addCart = () => {
+    let Item = {
+      id: props.product.id,
+      price: props.product.price,
+    };
+    dispatch(addToCart(Item));
+  };
+
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow m-3">
@@ -50,7 +62,7 @@ function Card(props) {
             <p className="font-semibold color-charcoal text-xl">
               Rp {props.product.price}
             </p>
-            <Button>
+            <Button onClick={addCart}>
               ADD
               <span>
                 <AddIcon className="ml-1" />

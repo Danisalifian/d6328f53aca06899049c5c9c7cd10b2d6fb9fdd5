@@ -2,6 +2,7 @@ import * as types from "../types";
 
 const initialState = {
   products: [],
+  cart: [],
   loading: false,
 };
 
@@ -17,6 +18,11 @@ export const productReducer = (state = initialState, action) => {
         ...state,
         products: action.payload,
         loading: false,
+      };
+    case types.ADD_TO_CART:
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
       };
     default:
       return state;
