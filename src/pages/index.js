@@ -41,17 +41,35 @@ function App() {
     return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  let listingProduct = !loading ? (
-    products.map((product) => {
-      return (
-        <div key={product.id}>
-          <Card product={product} />
-        </div>
-      );
-    })
+  let ProductLunch = !loading ? (
+    products
+      .filter((product) => product.foodtype === "Lunch")
+      .map((product) => {
+        return (
+          <div key={product.id}>
+            <Card product={product} />
+          </div>
+        );
+      })
   ) : (
     <div style={{ textAlign: "center" }}>
-      <CircularProgress color="secondary" />
+      <CircularProgress style={{ color: "#a23530" }} />
+    </div>
+  );
+
+  let ProductDinner = !loading ? (
+    products
+      .filter((product) => product.foodtype === "Dinner")
+      .map((product) => {
+        return (
+          <div key={product.id}>
+            <Card product={product} />
+          </div>
+        );
+      })
+  ) : (
+    <div style={{ textAlign: "center" }}>
+      <CircularProgress style={{ color: "#a23530" }} />
     </div>
   );
 
@@ -81,12 +99,10 @@ function App() {
             Kamis. 13 Maret 2019
           </h1>
           <Content active={active === 0}>
-            <div>{listingProduct}</div>
+            <div>{ProductLunch}</div>
           </Content>
           <Content active={active === 1}>
-            <div style={{ textAlign: "center" }}>
-              <CircularProgress style={{ color: "#a23530" }} />
-            </div>
+            <div>{ProductDinner}</div>
           </Content>
         </div>
         <CartWrapper className="px-2 ">
