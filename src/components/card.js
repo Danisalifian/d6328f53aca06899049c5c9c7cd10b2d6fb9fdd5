@@ -24,34 +24,32 @@ const ActionGroup = styled.div`
   align-items: center;
 `;
 
-function card() {
+function Card(props) {
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow m-3">
-        <img
-          className="w-full"
-          src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80"
-          alt="Display"
-        />
+        <img className="w-full" src={props.product.image} alt="Display" />
         <div className="px-2 py-2 mt-1 mb-2">
           <div className="font-semibold text-md color-sonic-silver is-flex is-item-center">
-            4.5{" "}
+            {props.product.rating}
             <span>
               <ReactStars {...starRates} classNames="mt-1 ml-1" />
             </span>
           </div>
           <p className="font-semibold color-charcoal text-lg mt-2">
-            Roasted Chicked With Scrambled Egg
+            {props.product.productName}
           </p>
           <small className="font-semibold text-md color-sonic-silver is-flex is-item-center mt-1">
-            by Kulina
+            by {props.product.publisher}
             <span>
               <CircleSmall />
             </span>
-            Uptown Lunch
+            {props.product.restaurantName}
           </small>
           <ActionGroup className="mt-2">
-            <p className="font-semibold color-charcoal text-xl">Rp 35,0000</p>
+            <p className="font-semibold color-charcoal text-xl">
+              Rp {props.product.price}
+            </p>
             <Button>
               ADD
               <span>
@@ -65,4 +63,4 @@ function card() {
   );
 }
 
-export default card;
+export default Card;

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "productName": "Karami Ontama Abura Soba",
+    "rating": 4.5,
+    "image": "https://assets-pergikuliner.com/oCrWEFHLvs9JoN3iyRHLZ9xDEwQ=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/54769/picture-1431683419.JPG",
+    "price": 35000,
+    "publisher": "Kulina",
+    "restaurantName": "Abura Soba Yamatoten",
+    "foodtype": "Lunch"
+  },
+  {
+    "id": 2,
+    "productName": "Regular Buffet",
+    "rating": 4.0,
+    "image": "https://assets-pergikuliner.com/hbLVmB9VpsNOJfCsnxbT44AHH_Y=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/1177855/picture-1543992886.jpg",
+    "price": 200000,
+    "publisher": "Kulina",
+    "restaurantName": "Shaburi & Kintan Buffet",
+    "foodtype": "Lunch"
+  },
+  {
+    "id": 3,
+    "productName": "Tepi Sawah Crispy or Grilled Duck",
+    "rating": 4.0,
+    "image": "https://assets-pergikuliner.com/Qnjr1V_hQu5EhZT48zkg2jFbodc=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/1371047/picture-1556264810.jpg",
+    "price": 100000,
+    "publisher": "Kulina",
+    "restaurantName": "Bebek Tepi Sawah",
+    "foodtype": "Lunch"
+  },
+  {
+    "id": 4,
+    "productName": "Ayam Dharmawangsa",
+    "rating": 4.0,
+    "image": "https://assets-pergikuliner.com/QBTueQeEtvIeQrc6PC_3gnnyJVE=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/1215164/picture-1547040808.JPG",
+    "price": 80000,
+    "publisher": "Kulina",
+    "restaurantName": "Plataran Dharmawangsa",
+    "foodtype": "Lunch"
+  },
+  {
+    "id": 5,
+    "productName": "Ayam Kecombrang",
+    "rating": 4.0,
+    "image": "https://assets-pergikuliner.com/aELdDuFuadl0Vm6dXjjxKlB6dAI=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/1153739/picture-1542356884.JPG",
+    "price": 85000,
+    "publisher": "Kulina",
+    "restaurantName": "The Garden",
+    "foodtype": "Dinner"
+  },
+  {
+    "id": 6,
+    "productName": "The Original Baby Back Ribs",
+    "rating": 4.0,
+    "image": "https://assets-pergikuliner.com/tLig7IegS6yMd0KEaeSnFVCyINY=/385x290/smart/https://assets-pergikuliner.com/uploads/image/picture/1996972/picture-1597825970.jpg",
+    "price": 75000,
+    "publisher": "Kulina",
+    "restaurantName": "Tony Roma's",
+    "foodtype": "Lunch"
+  }
+]
