@@ -2,7 +2,7 @@
 @import "./variables.scss";
 
 body {
-  background-color: $cultured;
+  // background-color: $cultured;
   font-family: "Open Sans";
   font-size: 16px;
 }
@@ -176,7 +176,7 @@ body {
   margin-top: 32px;
 }
 
-.mt-5 {
+.mt-6 {
   margin-top: 40px;
 }
 
@@ -239,6 +239,15 @@ body {
   background-color: $cultured;
 }
 
-.MuiAppBar-colorPrimary {
-  background-color: $cultured;
+.is-btn {
+  cursor: pointer;
+}
+
+.is-right {
+  float: right;
+}
+
+.MuiDrawer-paperAnchorBottom {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
