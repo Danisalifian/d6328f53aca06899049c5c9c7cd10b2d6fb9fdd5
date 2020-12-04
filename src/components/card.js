@@ -37,6 +37,10 @@ function Card(props) {
     dispatch(addToCart(Item));
   };
 
+  const formatNumber = (val) => {
+    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow m-3">
@@ -60,7 +64,7 @@ function Card(props) {
           </small>
           <ActionGroup className="mt-2">
             <p className="font-semibold color-charcoal text-xl">
-              Rp {props.product.price}
+              Rp {formatNumber(props.product.price)}
             </p>
             <Button onClick={addCart}>
               ADD
