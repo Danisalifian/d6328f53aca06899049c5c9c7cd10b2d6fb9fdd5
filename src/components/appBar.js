@@ -6,8 +6,13 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronDown from "mdi-react/ChevronDownIcon";
 import Drawer from "@material-ui/core/Drawer";
-import { ModalLocationWrapper } from "../components/modal/modalLocation";
+import {
+  ModalLocationWrapper,
+  InputIcon,
+} from "../components/modal/modalLocation";
 import CloseIcon from "@material-ui/icons/Close";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import Autocomplete from "../components/modal/autocomplete";
 
 function AppBars() {
   const [state, setState] = useState({
@@ -69,6 +74,35 @@ function AppBars() {
             <h1 className="text-2xl font-bold color-charcoal">
               Cek makanan yang tersedia di lokasi kamu!
             </h1>
+            <div className="mt-6">
+              <InputIcon>
+                <LocationOnIcon />
+              </InputIcon>
+              <Autocomplete
+                options={[
+                  {
+                    addressName: "Kulina",
+                    addressDetail:
+                      "Jalan Tuludong Atas 28, Senayan, Kebayoran Baru",
+                  },
+                  {
+                    addressName: "Pancoran Riverside Appartement",
+                    addressDetail:
+                      "RT.6/RW.1, Pengadegan Pancoran, South Jakarta",
+                  },
+                  {
+                    addressName: "Jalan Tuludong Atas 28",
+                    addressDetail:
+                      "Jalan Tuludong Atas 28, Senayan, Kebayoran Baru",
+                  },
+                  {
+                    addressName: "Block71 Jakarta",
+                    addressDetail:
+                      "Ariobimo Central, South Jakarta, RT.9/RW.4, East Jakarta",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </ModalLocationWrapper>
       </Drawer>
