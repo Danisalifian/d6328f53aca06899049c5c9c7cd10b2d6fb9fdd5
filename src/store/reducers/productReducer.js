@@ -4,6 +4,7 @@ const initialState = {
   products: [],
   cart: [],
   loading: false,
+  dates: [],
 };
 
 export const productReducer = (state = initialState, action) => {
@@ -23,6 +24,12 @@ export const productReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, action.payload],
+      };
+    case types.LOAD_DATE:
+      return {
+        ...state,
+        dates: action.payload,
+        loading: false,
       };
     default:
       return state;

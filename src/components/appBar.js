@@ -13,6 +13,7 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Autocomplete from "../components/modal/autocomplete";
+import CalendarScroll from "../components/calendarScroll";
 
 function AppBars() {
   const [state, setState] = useState({
@@ -50,10 +51,8 @@ function AppBars() {
             </div>
           </div>
         </ToolBar>
-        <ToolBar className="bg-cultured is-border-bottom">
-          <Typography variant="h6" className="color-charcoal">
-            Calendar slider
-          </Typography>
+        <ToolBar className="bg-cultured is-border-bottom p-0">
+          <CalendarScroll />
         </ToolBar>
       </AppBar>
       <ToolBar />

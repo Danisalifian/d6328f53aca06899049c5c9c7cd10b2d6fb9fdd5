@@ -17,3 +17,39 @@ export const addToCart = (Item) => (dispatch) => {
     payload: Item,
   });
 };
+
+export const getLocalDate = () => (dispacth) => {
+  let start = Date.now();
+  let days = 14;
+  let dates = [];
+  for (let i = 0; i < days; i++) {
+    let days = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"];
+    let months = [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
+    ];
+    let dateObj = {
+      id: i + 0,
+      fullDate: new Date(start + i * 1000 * 60 * 60 * 24).toDateString(),
+      date: new Date(start + i * 1000 * 60 * 60 * 24).getDate(),
+      day: days[new Date(start + i * 1000 * 60 * 60 * 24).getDay()],
+      month: months[new Date(start + i * 1000 * 60 * 60 * 24).getMonth()],
+    };
+
+    dates.push(dateObj);
+  }
+  dispacth({
+    type: types.LOAD_DATE,
+    payload: dates,
+  });
+};
