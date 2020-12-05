@@ -8,9 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../store/actions/productActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Cart, CartWrapper } from "../components/cart";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import CartFloating from "../components/cartFloating";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,20 +23,6 @@ function App() {
     if (index !== active) {
       setActive(index);
     }
-  };
-
-  const sumCart = (items) => {
-    let sum = 0;
-    items.map((item) => {
-      sum += item.price;
-      return sum;
-    });
-
-    return sum;
-  };
-
-  const formatNumber = (val) => {
-    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   let ProductLunch = !loading ? (
@@ -73,6 +57,8 @@ function App() {
     </div>
   );
 
+  let Cart = items.length !== 0 ? <CartFloating /> : "";
+
   useEffect(() => {
     dispatch(fetchProduct());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -105,23 +91,7 @@ function App() {
             <div>{ProductDinner}</div>
           </Content>
         </div>
-        <CartWrapper className="px-2 ">
-          <Cart style={{ justifyContent: "space-between" }}>
-            <div className="px-2 py-2 ml-2">
-              <h2 className="font-bold text-xl">
-                {items.length} Items | Rp {formatNumber(sumCart(items))}
-              </h2>
-              <h3 className="mt-1">Termasuk ongkos kirim</h3>
-            </div>
-            <div className="px-2 py-3">
-              <ShoppingCartIcon className=" color-cultured" fontSize="large" />
-              <ArrowForwardIosIcon
-                className=" color-cultured"
-                fontSize="large"
-              />
-            </div>
-          </Cart>
-        </CartWrapper>
+        {Cart}
       </div>
     </div>
   );
