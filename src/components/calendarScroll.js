@@ -36,9 +36,13 @@ const CalendarItem = styled.button`
   }
 `;
 
-const DayName = styled.div`
+const DayName = styled.button`
   font-size: 8px;
   font-weight: 600;
+  :focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;
 
 function CalendarScroll() {
@@ -71,7 +75,8 @@ function CalendarScroll() {
             <DayName
               onClick={handleSelected}
               active={active === date.id}
-              id={date.id}>
+              id={date.id}
+              disabled={date.day === "SABTU" || date.day === "MINGGU"}>
               {threeCharDay(date.day)}
             </DayName>
             {date.date}
