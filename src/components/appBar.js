@@ -52,7 +52,7 @@ function AppBars() {
             </div>
           </div>
         </ToolBar>
-        <ToolBar className="bg-cultured is-border-bottom p-0">
+        <ToolBar className="bg-cultured is-border-bottom p-0 is-content-center">
           <CalendarScroll />
         </ToolBar>
       </AppBar>
