@@ -14,6 +14,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Autocomplete from "../components/modal/autocomplete";
 import CalendarScroll from "../components/calendarScroll";
+import GooglePowered from "../assets/img/powered-google.png";
 
 function AppBars() {
   const [state, setState] = useState({
@@ -100,6 +101,13 @@ function AppBars() {
                       "Ariobimo Central, South Jakarta, RT.9/RW.4, East Jakarta",
                   },
                 ]}
+              />
+            </div>
+            <div className="is-flex">
+              <img
+                src={GooglePowered}
+                className="img-label"
+                alt="powered-by-google"
               />
             </div>
           </div>
