@@ -33,12 +33,12 @@ export class Autocomplete extends Component {
     });
   };
 
-  onClick = (e) => {
+  onClick = (optionName) => {
     this.setState({
       activeOption: 0,
       filteredOptions: [],
       showOptions: false,
-      userInput: e.currentTarget.innerText,
+      userInput: optionName.addressDetail,
     });
   };
   onKeyDown = (e) => {
@@ -85,7 +85,7 @@ export class Autocomplete extends Component {
                 <li
                   className={className}
                   key={optionName.addressName}
-                  onClick={onClick}>
+                  onClick={() => onClick(optionName)}>
                   <div className="is-flex is-item-center">
                     <LocationOnIcon className="ml-2 color-sonic-silver" />
                     <div>
@@ -122,14 +122,6 @@ export class Autocomplete extends Component {
             onKeyDown={onKeyDown}
             value={userInput}
           />
-          {/* <input
-            type="text"
-            className="search-box"
-            onChange={onChange}
-            onKeyDown={onKeyDown}
-            value={userInput}
-          /> */}
-          {/* <input type="submit" value="" className="search-btn" /> */}
         </div>
         {optionList}
       </React.Fragment>

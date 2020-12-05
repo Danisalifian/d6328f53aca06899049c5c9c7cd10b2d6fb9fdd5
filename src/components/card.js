@@ -11,7 +11,7 @@ import { addToCart } from "../store/actions/productActions";
 import { useDispatch } from "react-redux";
 
 const starRates = {
-  value: 4.5,
+  count: 5,
   edit: false,
   activeColor: "#a23530",
   isHalf: true,
@@ -41,15 +41,23 @@ function Card(props) {
     return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
+  const formatRating = (num) => {
+    return num.toFixed(1);
+  };
+
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow m-3">
         <img className="w-full" src={props.product.image} alt="Display" />
         <div className="px-2 py-2 mt-1 mb-2">
           <div className="font-semibold text-md color-sonic-silver is-flex is-item-center">
-            {props.product.rating}
+            {formatRating(props.product.rating)}
             <span>
-              <ReactStars {...starRates} classNames="mt-1 ml-1" />
+              <ReactStars
+                {...starRates}
+                classNames="mt-1 ml-1"
+                value={formatRating(props.product.rating)}
+              />
             </span>
           </div>
           <p className="font-semibold color-charcoal text-lg mt-2">
