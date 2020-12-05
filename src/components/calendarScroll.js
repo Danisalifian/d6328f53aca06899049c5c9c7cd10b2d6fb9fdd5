@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocalDate } from "../store/actions/productActions";
+import { selectedDate } from "../store/actions/productActions";
 
 const CalendarWrapper = styled.div`
   overflow: auto;
   white-space: nowrap;
 `;
 
-const CalendarItem = styled.div`
+const CalendarItem = styled.button`
   display: inline-grid;
   background-color: ${(props) => (props.active ? "#424749" : "#fff")};
   cursor: pointer;
@@ -25,6 +26,14 @@ const CalendarItem = styled.div`
     background-color: #424749;
     color: #fff;
   }
+  :focus {
+    outline: none;
+    box-shadow: none;
+  }
+  :disabled {
+    color: rgb(66, 71, 73, 0.4);
+    background: white;
+  }
 `;
 
 const DayName = styled.div`
@@ -38,12 +47,12 @@ function CalendarScroll() {
   const loading = useSelector((state) => state.product.loading);
   const dates = useSelector((state) => state.product.dates);
 
-  const handleSelected = (e) => {
-    console.log(e.target.id);
+  const handleSelected = (e, date) => {
     const index = parseInt(e.target.id, 0);
     if (index !== active) {
       setActive(index);
     }
+    dispatch(selectedDate(date));
   };
 
   const threeCharDay = (val) => {
@@ -55,9 +64,10 @@ function CalendarScroll() {
         return (
           <CalendarItem
             key={date.id}
-            onClick={handleSelected}
+            onClick={(e) => handleSelected(e, date)}
             active={active === date.id}
-            id={date.id}>
+            id={date.id}
+            disabled={date.day === "SABTU" || date.day === "MINGGU"}>
             <DayName
               onClick={handleSelected}
               active={active === date.id}
@@ -78,18 +88,6 @@ function CalendarScroll() {
   return (
     <div style={{ display: "contents" }}>
       <CalendarWrapper className="is-content-center">
-        {/* <CalendarItem onClick={handleSelected} active={active === 0} id={0}>
-          <DayName onClick={handleSelected} active={active === 0} id={0}>
-            SEN
-          </DayName>
-          12
-        </CalendarItem>
-        <CalendarItem onClick={handleSelected} active={active === 1} id={1}>
-          <DayName onClick={handleSelected} active={active === 1} id={1}>
-            SEL
-          </DayName>
-          13
-        </CalendarItem> */}
         {DateArray}
       </CalendarWrapper>
     </div>

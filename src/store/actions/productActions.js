@@ -44,6 +44,7 @@ export const getLocalDate = () => (dispacth) => {
       date: new Date(start + i * 1000 * 60 * 60 * 24).getDate(),
       day: days[new Date(start + i * 1000 * 60 * 60 * 24).getDay()],
       month: months[new Date(start + i * 1000 * 60 * 60 * 24).getMonth()],
+      year: new Date(start + i * 1000 * 60 * 60 * 24).getFullYear(),
     };
 
     dates.push(dateObj);
@@ -51,5 +52,12 @@ export const getLocalDate = () => (dispacth) => {
   dispacth({
     type: types.LOAD_DATE,
     payload: dates,
+  });
+};
+
+export const selectedDate = (date) => (dispatch) => {
+  dispatch({
+    type: types.SET_DATE,
+    payload: date,
   });
 };

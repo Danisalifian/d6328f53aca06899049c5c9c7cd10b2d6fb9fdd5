@@ -17,6 +17,7 @@ function App() {
   const products = useSelector((state) => state.product.products);
   const loading = useSelector((state) => state.product.loading);
   const items = useSelector((state) => state.product.cart);
+  const dateTime = useSelector((state) => state.product.dateTime);
 
   const handleTabs = (e) => {
     const index = parseInt(e.target.id, 0);
@@ -59,6 +60,10 @@ function App() {
 
   let Cart = items.length !== 0 ? <CartFloating /> : "";
 
+  const upperFirstChar = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  };
+
   useEffect(() => {
     dispatch(fetchProduct());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -82,7 +87,8 @@ function App() {
         <Toolbar />
         <div className="container">
           <h1 className="text-xl font-bold color-charcoal px-3 mt-1">
-            Kamis. 13 Maret 2019
+            {upperFirstChar(dateTime.day)}. {dateTime.date} {dateTime.month}{" "}
+            {dateTime.year}
           </h1>
           <Content active={active === 0}>
             <div>{ProductLunch}</div>
